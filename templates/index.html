@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to Word Converter</title>
+    <style>
+        /* Reset Margin and Padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Basic Page Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fb;
+            color: #333;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            flex-direction: column; /* Arrange content vertically */
+            height: 100vh; /* Full viewport height */
+            padding: 0 20px; /* Padding untuk jarak dengan tepi */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #4e73df;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%; /* Untuk responsif pada layar kecil */
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        input[type="file"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4e73df;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2e59d9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            input[type="file"] {
+                width: 100%;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .footer a {
+            color: #4e73df;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Convert PDF to Word and Word to PDF</h1>
+
+        <!-- Form to Convert PDF to Word -->
+        <div class="form-group">
+            <h2>Upload a PDF to convert to Word</h2>
+            <form action="/convert-pdf-to-word" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".pdf" required>
+                <br>
+                <button type="submit">Convert PDF to Word</button>
+            </form>
+        </div>
+
+        <!-- Form to Convert Word to PDF -->
+        <div class="form-group">
+            <h2>Upload a Word document to convert to PDF</h2>
+            <form action="/convert-word-to-pdf" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".docx" required>
+                <br>
+                <button type="submit">Convert Word to PDF</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 PDF Converter Tool. By @Wahyu Saugiarto. <br> 
+           <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </p>
+    </div>
+
+</body>
+</html>
+
