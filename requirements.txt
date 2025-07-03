@@ -1,1 +1,5 @@
 flask
+pdf2docx
+python-docx
+reportlab
+gunicorn
